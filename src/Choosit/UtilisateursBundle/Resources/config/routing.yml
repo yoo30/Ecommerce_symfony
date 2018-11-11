@@ -1,0 +1,9 @@
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+
+profil:
+    path: /profil
+    defaults:
+        _controller: ChoositUtilisateursBundle:Default:index
+

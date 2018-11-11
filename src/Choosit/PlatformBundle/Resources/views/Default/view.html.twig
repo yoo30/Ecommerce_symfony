@@ -1,0 +1,40 @@
+
+{% extends "ChoositPlatformBundle::layout.html.twig" %}
+
+
+{% block title %}
+  Lecture d'un produit - {{ parent() }}
+{% endblock %}
+
+
+{% block Choositplatform_body %}
+    <div class="span9">
+        <div class="row">
+            <div class="span5">
+                <img src="" alt="" width="470" height="310">
+            </div>
+                <div class="span4">
+                      <h4>{{ advert.nom }}</h4>
+                      <h5> {{ advert.description }}</h5>
+                      <h4> {{ advert.prix }} €</h4>
+                      <form action="">
+                        <select name="quantite" class="span1">
+                            {% for i in 1..10 %}
+                                <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+
+                        <div>
+                        <button class="btn btn-success">Ajouter au panier</button>
+                        <a href="{{ path('choosit_platform_home', { 'page' : 1 }) }}" class="btn btn-primary">Retour à la liste</a>
+                        </div>
+                     </form>
+                </div>
+          </div>
+    </div>
+{% endblock %}
+
+
+
+
+

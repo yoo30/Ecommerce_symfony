@@ -1,0 +1,54 @@
+produits:
+    path:     /
+    defaults:
+        _controller:  ChoositPlatformBundle:Produits:produits
+
+
+
+presentation:
+    path:     /produit/{id}
+    defaults:
+        _controller: ChoositPlatformBundle:Produits:presentation
+    requirements:
+        id: \d+
+
+
+panier:
+    path:    /panier
+    defaults:
+        _controller: ChoositPlatformBundle:Panier:panier
+
+
+
+choosit_platform_add:
+    path:     /add
+    defaults:
+        _controller: ChoositPlatformBundle:Produits:addProduits
+
+
+validation:
+    path:      /panier/validation
+    defaults:
+        _controller: ChoositPlatformBundle:Panier:validation
+
+
+ajouter:
+    path:      /ajouter/{id}
+    defaults:
+        _controller: ChoositPlatformBundle:Panier:ajouter
+    requirements:
+        id: \d+
+
+supprimer:
+    path:      /supprimer/{id}
+    defaults:
+        _controller: ChoositPlatformBundle:Panier:supprimer
+    requirements:
+        id: \d+
+
+
+vider:
+    path:      /vider
+    defaults:
+        _controller: ChoositPlatformBundle:Panier:vider
+

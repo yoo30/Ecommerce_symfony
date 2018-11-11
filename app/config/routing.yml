@@ -1,0 +1,8 @@
+choosit_utilisateurs:
+    resource: "@ChoositUtilisateursBundle/Resources/config/routing.yml"
+    prefix:   /
+
+choosit_platform:
+    resource: "@ChoositPlatformBundle/Resources/config/routing.yml"
+    prefix:   /choosit/
+

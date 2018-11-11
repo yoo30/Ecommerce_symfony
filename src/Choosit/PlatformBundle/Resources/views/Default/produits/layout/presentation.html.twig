@@ -1,0 +1,42 @@
+{% extends "::layouts/layout.html.twig" %}
+
+
+{% block title %}
+  Accueil - {{ parent() }}
+{% endblock %}
+
+
+{% block body %}
+<div class="container">
+  <div class="row">
+            <div class="span3">
+            {% include '::moduleUsed/navigation.html.twig' %}
+            </div>
+             <div class="span9">
+                <div class="row">
+                  <div class="span5">
+                      <img src="{{ asset('images/holder.png') }}" alt="DevAndClick" width="470" height="310">
+                </div>
+                  <div class="span4">
+                        <h4>{{ produit.nom }}</h4>
+                        <h4> {{ produit.prix }} €</h4>
+                        <p>Description : {{ produit.description }}</p>
+                       <form action="{{ path('ajouter', {'id': produit.id }) }}" method="get">
+                          <select name="quantite" class="span1" onChange="this.form.submit()">
+                              {% for i in 0..10 %}
+                               <option value="{{ i }}" >{{ i }}</option>
+                               {% endfor %}
+                          </select>
+                      </form>
+              <div>
+                  <a class="btn btn-success" href="{{ path('ajouter', {'id': produit.id}) }}">Ajouter au panier</a>
+              </div>
+            </form>
+                  </div>
+                </div>
+
+            </div>
+  </div>
+</div>
+
+{% endblock %}

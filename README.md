@@ -1,8 +1,8 @@
 # Ecommerce_symfony
 
-##Ceci est mon premier README.md, merci d'être indulgent :)
+### Ceci est mon premier README.md, merci d'être indulgent :)
 
-##Bien débuter
+## Bien débuter
 
 cloner le repository dans le dossier www/ de votre machine.
 

@@ -1,0 +1,54 @@
+produits:
+    path:     /
+    defaults:
+        _controller:  EcommerceEcommerceBundle:Produits:produits
+
+
+
+presentation:
+    path:     /produit/{id}
+    defaults:
+        _controller: EcommerceEcommerceBundle:Produits:presentation
+    requirements:
+        id: \d+
+
+
+panier:
+    path:    /panier
+    defaults:
+        _controller: EcommerceEcommerceBundle:Panier:panier
+
+
+
+choosit_platform_add:
+    path:     /add
+    defaults:
+        _controller: EcommerceEcommerceBundle:Produits:addProduits
+
+
+validation:
+    path:      /panier/validation
+    defaults:
+        _controller: EcommerceEcommerceBundle:Panier:validation
+
+
+ajouter:
+    path:      /ajouter/{id}
+    defaults:
+        _controller: EcommerceEcommerceBundle:Panier:ajouter
+    requirements:
+        id: \d+
+
+supprimer:
+    path:      /supprimer/{id}
+    defaults:
+        _controller: EcommerceEcommerceBundle:Panier:supprimer
+    requirements:
+        id: \d+
+
+
+vider:
+    path:      /vider
+    defaults:
+        _controller: EcommerceEcommerceBundle:Panier:vider
+

@@ -19,6 +19,7 @@ class AppKernel extends Kernel
 
             new Choosit\PlatformBundle\ChoositPlatformBundle(),
             new Choosit\UtilisateursBundle\ChoositUtilisateursBundle(),
+            new Ecommerce\EcommerceBundle\EcommerceEcommerceBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

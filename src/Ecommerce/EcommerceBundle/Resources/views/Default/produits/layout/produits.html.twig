@@ -1,0 +1,56 @@
+{% extends "::layouts/layout.html.twig" %}
+
+{% block title %}
+  Annonces - {{ parent() }}
+{% endblock %}
+
+
+{% block body %}
+
+<div class="container">
+  <div class="row">
+    <div class="span3">
+    {% include '::moduleUsed/navigation.html.twig' %}
+    {#i{% nclude 'ChoositPlatformBundle:Default:panier/layout/modulesUsed/module.html.twig' %}#}
+    </div>
+        <div class="span9">
+          <h2>Liste des produits</h2>
+          <ul class="thumbnails">
+            {% for produit in listProduits %}
+
+                  <li class="span3">
+                    <div class="thumbnail">
+                      <img src="{{ asset('images/holder.png') }}" alt="images fruits" width="300" height="300">
+                      <div class="caption">
+                         <h4>{{ produit.nom|capitalize }}</h4>
+                          <p>Prix : {{ produit.prix }} €</p>
+                          <a class="btn btn-primary" href="{{ path('presentation', {'id': produit.id}) }}" > Voir la fiche </a>
+                          {% if panier[produit.id] is not defined %}
+                          <a class="btn btn-success" href="{{ path('ajouter', {'id': produit.id}) }}">Ajouter au panier</a>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </li>
+
+                {% else %}
+                  <li>Pas (encore !) d'annonces</li>
+                {% endfor %}
+
+          </ul>
+
+              <div class="pagination">
+                    <ul>
+                        <li class="disabled"><span>Précédent</span></li>
+                        <li class="disabled"><span>1</span></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">Suivant</a></li>
+                    </ul>
+            </div>
+        </div>
+  </div>
+</div>
+
+{% endblock %}

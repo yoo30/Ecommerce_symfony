@@ -1,0 +1,4 @@
+services:
+    choosit.vueGeneralPanier:
+       class: Choosit\PlatformBundle\vueGeneralPanier\NavPanier
+
